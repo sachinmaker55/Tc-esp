@@ -1,0 +1,31 @@
+<!doctype html>
+<html lang="en">
+<head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Tournaments — TIGER CLAW</title><link rel="stylesheet" href="assets/style.css"></head>
+<body>
+  <div id="header-placeholder"></div>
+
+  <main>
+    <section class="section container">
+      <h2>Upcoming Tournaments</h2>
+      <div class="card small">
+        <strong>State Clash • Season 1</strong><div>Prize pool: ₹50,000 • Format: 5v5 • Date: TBD</div>
+      </div>
+
+      <h3 class="mt-8">Register</h3>
+      <form id="tournament-form" class="card" action="#" method="POST">
+        <div class="form-row"><label>Team name</label><input name="team_name" required type="text"></div>
+        <div class="form-row"><label>Captain name</label><input name="captain" required type="text"></div>
+        <div class="form-row"><label>Captain email</label><input name="email" type="email"></div>
+        <div class="form-row"><label>Contact number</label><input name="phone" type="tel"></div>
+        <div class="form-row"><label>Guild (choose)</label><select id="tournament-guild" name="guild"></select></div>
+        <div class="form-row"><label>Number of players</label><input name="players_count" type="number" min="1" max="16" value="5"></div>
+        <div class="form-row"><button class="primary" type="submit">Register Team</button></div>
+        <div class="small">Note: By default submissions are saved locally unless you replace FORM_ENDPOINT in assets/main.js with a Formspree endpoint or use a Google Form embed</div>
+      </form>
+    </section>
+  </main>
+
+  <div id="footer-placeholder"></div>
+  <script src="assets/main.js"></script>
+</body>
+</html>
