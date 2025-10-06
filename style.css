@@ -1,0 +1,91 @@
+/* assets/style.css - mobile-first */
+:root{
+  --tiger-orange:#ff7a00;
+  --tiger-black:#0b0b0b;
+  --tiger-white:#ffffff;
+  --site-max-width:1100px;
+  --glass-bg: rgba(255,255,255,0.06);
+  --glass-border: rgba(255,255,255,0.08);
+  --radius:12px;
+  font-family: system-ui,-apple-system,"Segoe UI",Roboto,"Helvetica Neue",Arial;
+}
+
+*{box-sizing:border-box}
+html,body{height:100%;margin:0;background:#070707;color:var(--tiger-white)}
+a{color:var(--tiger-orange);text-decoration:none}
+.container{max-width:var(--site-max-width);margin:0 auto;padding:18px}
+
+/* header */
+.site-header{display:flex;align-items:center;justify-content:space-between;padding:12px;border-bottom:1px solid rgba(255,255,255,0.04);background:linear-gradient(90deg,rgba(0,0,0,0.25),transparent)}
+.brand-link{display:flex;gap:10px;align-items:center}
+.logo{width:52px;height:52px;object-fit:contain;border-radius:8px}
+.brand-text h1{margin:0;font-size:16px;letter-spacing:1px}
+.tagline{margin:0;font-size:12px;opacity:0.85}
+
+/* nav */
+#nav-toggle{font-size:22px;background:transparent;border:0;color:var(--tiger-white);display:block}
+.main-nav ul{list-style:none;margin:0;padding:0;display:flex;gap:8px}
+.main-nav a{padding:8px 10px;border-radius:8px;font-size:14px}
+@media (max-width:900px){
+  .main-nav{position:absolute;right:12px;top:68px;background:rgba(0,0,0,0.6);backdrop-filter:blur(6px);padding:8px;border-radius:10px;display:none}
+  .main-nav.open{display:block}
+  .main-nav ul{flex-direction:column}
+}
+
+/* hero */
+.hero{
+  min-height:54vh;
+  display:flex;
+  align-items:center;
+  color:var(--tiger-white);
+  padding:28px;
+  border-radius:14px;
+  margin:14px;
+  background-image:
+    linear-gradient(120deg, rgba(11,11,11,0.45), rgba(255,122,0,0.08)),
+    url('assets/images/tiger-texture.jpg'),
+    repeating-linear-gradient(135deg, rgba(0,0,0,0.22) 0 8px, transparent 8px 26px);
+  background-size: cover, cover, auto;
+  background-blend-mode: multiply, overlay;
+  box-shadow: 0 8px 30px rgba(0,0,0,0.6);
+}
+.hero h2{font-size:20px;margin:0 0 8px}
+.hero p{margin:0 0 14px;opacity:0.95}
+
+/* sections / cards */
+.section{padding:18px;margin:12px}
+.grid{display:grid;gap:12px}
+.grid.cols-2{grid-template-columns:repeat(2,1fr)}
+.grid.cols-3{grid-template-columns:repeat(3,1fr)}
+.card{background:var(--glass-bg);border:1px solid var(--glass-border);padding:12px;border-radius:12px}
+.product-img{width:100%;height:160px;object-fit:cover;border-radius:8px}
+
+/* forms */
+.form-row{display:flex;flex-direction:column;gap:8px;margin-bottom:8px}
+input[type="text"],input[type="email"],input[type="tel"],select,textarea{
+  padding:10px;border-radius:8px;border:1px solid rgba(255,255,255,0.06);background:rgba(0,0,0,0.35);color:var(--tiger-white);
+}
+button.primary{background:var(--tiger-orange);color:var(--tiger-black);padding:10px 12px;border-radius:8px;border:0;font-weight:600}
+
+/* guild list */
+.guild-card{display:flex;align-items:center;gap:12px;padding:10px;border-radius:10px;justify-content:space-between}
+.guild-code{font-weight:700;padding:8px 10px;border-radius:8px;background:rgba(0,0,0,0.45)}
+
+/* footer */
+.site-footer{padding:18px;border-top:1px solid rgba(255,255,255,0.04);margin-top:20px}
+.footer-inner{display:flex;flex-direction:column;gap:10px;align-items:center}
+.logo-small{width:36px;height:36px;object-fit:contain;border-radius:6px}
+.tiny{font-size:12px;opacity:0.8}
+
+/* utility */
+.center{display:flex;align-items:center;justify-content:center}
+.mt-8{margin-top:8px}
+.mb-12{margin-bottom:12px}
+.small{font-size:13px;opacity:0.85}
+
+/* responsive adjustments */
+@media(min-width:900px){
+  .hero{margin:28px}
+  .container{padding:28px}
+  .grid.cols-3{grid-template-columns:repeat(3,1fr)}
+}
